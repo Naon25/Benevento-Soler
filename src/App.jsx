@@ -6,7 +6,10 @@ function App() {
   return(
     <>
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer 
+      nro={1}
+      nombre= {"Item"} 
+      precio={"$$"} />
     </>
   );
 }

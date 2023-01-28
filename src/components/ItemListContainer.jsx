@@ -1,8 +1,12 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = ({nro, nombre, precio}) => {
   return (
-    <div>ItemListContainer</div>
+    <>
+    <h1>{nombre} </h1>
+    <h2>{nro}</h2>
+    <h3>{precio}</h3>
+    </>
   )
 }
 
