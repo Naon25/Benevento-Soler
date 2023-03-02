@@ -3,23 +3,31 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
+import {ShoppingCartProvider} from "./components/context/ShoppingCartContext";
+import ComponenteA from "./components/context/ComponenteA";
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route exact path="/catalogue" element={<ItemListContainer />} />
-        <Route
-          exact
-          path="/category/:category"
-          element={<ItemListContainer />}
-        />
-        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+    <ShoppingCartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/catalogue" element={<ItemListContainer />} />
+          <Route
+            exact
+            path="/category/:category"
+            element={<ItemListContainer />}
+          />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
 
-        <Route exact path="/cart" element={<Cart />} />
-      </Routes>
-    </BrowserRouter>
+          <Route exact path="/cart" element={<Cart />} />
+        </Routes>
+        <StateComponent>
+          <ComponenteA />   
+        </StateComponent>
+      </BrowserRouter>
+    </ShoppingCartProvider>  
   );
 }
 
