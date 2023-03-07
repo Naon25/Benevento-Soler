@@ -7,7 +7,7 @@ const Document = () => {
     useEffect(() => {
         const db = getFirestore();
 
-        const oneItem = doc(db,"bikes","P7Pl6vR9PjocFiSZVuuT");
+        const oneItem = doc(db,"bicicletas","P7Pl6vR9PjocFiSZVuuT");
 
         getDoc(oneItem).then((snapshot) =>{
             if (snapshot.exists()) {

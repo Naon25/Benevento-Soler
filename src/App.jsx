@@ -4,7 +4,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import {ShoppingCartProvider} from "./components/context/ShoppingCartContext";
-import ComponenteA from "./components/context/ComponenteA";
+import Welcome from "./components/Welcome";
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
+          <Route exact path="/" element={<Welcome />} />
           <Route exact path="/catalogue" element={<ItemListContainer />} />
           <Route
             exact
@@ -20,14 +21,10 @@ function App() {
             element={<ItemListContainer />}
           />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
-        <StateComponent>
-          <ComponenteA />   
-        </StateComponent>
       </BrowserRouter>
-    </ShoppingCartProvider>  
+    </ShoppingCartProvider>
   );
 }
 
